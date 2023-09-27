@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>TestGeckoJs</title>
     <script>
-		window.addEventListener("message", function (event) {
+		window.addEventListener(function (event) {
 		  if (
 		    event.source == window &&
 		    event.data.direction &&
-		    event.data.direction == "from-page-script"
+		    event.data.direction == "from-content-script"
 		  ) {
 			  window.messenger.notify('Message from the page script: "' + event.data.message + '"');
 		  }
