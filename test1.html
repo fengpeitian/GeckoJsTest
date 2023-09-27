@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <title>TestGeckoJs</title>
     <script>
+		window.addEventListener("message", function (event) {
+		  if (
+		    event.source == window &&
+		    event.data.direction &&
+		    event.data.direction == "from-page-script"
+		  ) {
+			  window.messenger.notify('Message from the page script: "' + event.data.message + '"');
+		  }
+		});
         function runAndroid() {
             window.messenger.notify("Message from the page script!");
         }
