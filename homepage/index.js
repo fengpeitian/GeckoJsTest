@@ -78,7 +78,8 @@ let template = null
  */
 function callbackAndroid(name, data) {
     let m_msg = {m_name: callback_load_progress, m_data: data} 
-    window.messenger.notify(m_msg);
+    //window.messenger.notify(m_msg);
+    window.webview.raiseEvent("js", m_msg)
 }
 
 function setInputFocused(focus) {
