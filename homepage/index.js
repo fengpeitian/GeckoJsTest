@@ -77,13 +77,13 @@ let template = null
  * data: args
  */
 function callbackAndroid(name, data) {
-    let m_msg = {m_name: callback_load_progress, m_data: data} 
+    let m_msg = {m_name: name, m_data: data} 
     //window.messenger.notify(m_msg);
     window.webview.raiseEvent("js", m_msg)
 }
 
 function setInputFocused(focus) {
-    callbackAndroid(Fulldive.onInputFocusChanged, focus)
+    callbackAndroid("Fulldive.onInputFocusChanged", focus)
 }
 
 
@@ -92,7 +92,7 @@ function sendForm() {
     var url = new URL("https://google.com/search");
     url.searchParams.append("q", q);
 	
-	callbackAndroid(Fulldive.openURL, url.toString())
+    callbackAndroid("Fulldive.openURL", url.toString())
 }
 
 function constructItemHtml(shortcut) {
