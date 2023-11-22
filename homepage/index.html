@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>VIVE Browser home page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.6">
+    <style>@import url('index.css');</style>
+</head>
+<body>
+<div>
+    <div class="wrapper">
+        <img src="icon.svg" style="margin-top: 120px">
+
+        <form id="search-form" action="javascript:sendForm()">
+            <div class="search">
+                <input type="text" placeholder="Search the Web or enter address"
+                       name="q_searc_textfield" class="round-search" autocomplete="off"
+                       autocapitalize="off" autocorrect="off" style="color: #596677"
+                       id="query-input" onfocus="setInputFocused(true)"
+                       onblur="setInputFocused(false)">
+            </div>
+        </form>
+
+        <div class="shortcut-grid-container" id="id-shortcut-container"></div>
+
+        <!--    add shortcut-->
+        <div class="modal-container" id="id-add-shortcut-popup" style="visibility: hidden">
+            <div class="add-shortcut">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                    <div class="add-shortcut-title">Add shortcut</div>
+                    <!--                    <div class="bookmarks-button">Bookmark</div>-->
+                </div>
+
+                <div class="input-container"
+                     style="display: flex; flex-direction: column; justify-content: space-between ">
+
+                    <label for="webname" style="margin-top: 28px">Web name</label>
+                    <input type="text" id="webname" name="lastname" placeholder=""
+                           onfocus="setInputFocused(true)" onblur="setInputFocused(false)">
+
+                    <label for="address" style="margin-top: 28px">Address</label>
+                    <input type="text" id="address" name="lastname" placeholder=""
+                           onfocus="setInputFocused(true)" onblur="setInputFocused(false)">
+                </div>
+
+                <div style="display: flex; flex-direction: row; justify-content: center; margin-top: 32px">
+                    <button class="cancel-button" id="id-cancel-add-button">Cancel</button>
+                    <button class="confirm-button" id="id-confirm-add-button">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+        <!--    edit shortcut-->
+        <div class="modal-container" id="id-edit-shortcut-popup" style="visibility: hidden">
+            <div class="add-shortcut">
+                <div style="display: flex; flex-direction: row; justify-content: space-between; align-items: center">
+                    <div class="add-shortcut-title">Edit shortcut</div>
+                    <!--                    <div class="bookmarks-button">Bookmark</div>-->
+                </div>
+
+                <div class="input-container"
+                     style="display: flex; flex-direction: column; justify-content: space-between ">
+
+                    <label for="webname" style="margin-top: 28px">Web name</label>
+                    <input type="text" id="editwebname" name="lastname" placeholder=""
+                           onfocus="setInputFocused(true)" onblur="setInputFocused(false)">
+
+                    <label for="address" style="margin-top: 28px">Address</label>
+                    <input type="text" id="editaddress" name="lastname" placeholder=""
+                           onfocus="setInputFocused(true)" onblur="setInputFocused(false)">
+                </div>
+
+                <div style="display: flex; flex-direction: row; justify-content: center; margin-top: 32px">
+                    <button class="cancel-button" id="id-cancel-button">Cancel</button>
+                    <button class="confirm-button" id="id-confirm-button">Confirm</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="shortcut-edit-menu-container" id="id-shortcut-edit-menu-container">
+            <div class="button-edit-menu" id="id-edit-button">Edit</div>
+            <div class="button-edit-menu" id="id-delete-button">Delete</div>
+        </div>
+
+    </div>
+    <script src="index.js"></script>
+</div>
+</body>
+</html>
