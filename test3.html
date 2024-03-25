@@ -25,8 +25,9 @@
             } else {
                 document.getElementById("text").value += "webview vaild\n";
                 document.getElementById("text").value += "webview : " + JSON.stringify(window.webview.getJson())+"\n";
+
+                window.webview.raiseEvent("js", "run")
             }
-            webview.raiseEvent("js", "run")
         }
     </script>
 </body>
