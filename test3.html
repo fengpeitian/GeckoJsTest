@@ -13,6 +13,10 @@
     <button onclick="runJs('web click')">run js method</button>
 </div>
 <script>
+        function test(str) {
+            document.getElementById("text").value += "test " + str + "\n";
+        }
+    
         function runJs(name) {
             document.getElementById("text").value += "js run " + name + "\n";
             alert(name + " run")
