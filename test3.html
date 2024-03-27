@@ -19,7 +19,8 @@
     
         function runJs(name) {
             document.getElementById("text").value += "js run " + name + "\n";
-            alert(name + " run")
+            alert(name + " run");
+            return name;
         }
 
         function runAndroid() {
@@ -30,7 +31,7 @@
                 document.getElementById("text").value += "webview vaild\n";
                 document.getElementById("text").value += "webview : " + JSON.stringify(window.webview.getJson())+"\n";
 
-                window.webview.raiseEvent("js", "run")
+                window.webview.raiseEvent("js", "run");
             }
         }
     </script>
